@@ -1,10 +1,14 @@
 // hotIce : 0 차가운거, 1 따뜻한거
-class Drink implements Food{
-	int price;
-	String name;
-	int hotIce;
-	int totalPrice;
+abstract class Drink implements Food{
+	protected int price;
+	protected String name;
+	protected int hotIce;
+	protected int totalPrice;
 	
+	//totalPrice 는 하위에서 구현
+	public abstract int getTotalPrice();
+	
+	//일반적인 get, set
 	public int getPrice(){
 		return price;	
 	}
@@ -14,7 +18,6 @@ class Drink implements Food{
 			return true;
 		}
 		return false;
-		
 	}
 	public String getName(){
 		return name;
@@ -32,15 +35,5 @@ class Drink implements Food{
 			return true;
 		}
 		return false;
-	}
-	public int getTotalPrice(){
-		return totalPrice;
-	}
-	public void setTotalPrice(){
-
-	}
-
-	public String toString(){
-		return name + "(" + price + ")";
 	}
 }

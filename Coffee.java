@@ -1,10 +1,10 @@
 //shotAmount : 샷추가 개수 기본은 1
 //syrupAmount : 시럽추가 개수 기본은 1
-class Coffe extends Drink {
-	static int SYRUP_PRICE = 500;
-	static int SHOT_PRICE = 500;
-	int shotAmount;
-	int syrupAmount;
+class Coffee extends Drink {
+	protected static int SYRUP_PRICE = 500;
+	protected static int SHOT_PRICE = 500;
+	protected int shotAmount;
+	protected int syrupAmount;
 
 	public int getShotAmount(){
 		return shotAmount;
@@ -27,6 +27,12 @@ class Coffe extends Drink {
 		return false;
 	}
 
+	//Override 
+	@Override
+	public int getTotalPrice(){
+		return price + (shotAmount * SYRUP_PRICE) + (syrupAmount * SHOT_PRICE);
+	}
+	@Override
 	public String toString(){
 		String coffeeInfo = name + "(" + price + ")";
 		if(shotAmount > 1)
