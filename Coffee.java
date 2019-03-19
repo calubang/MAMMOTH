@@ -5,6 +5,10 @@ class Coffee extends Drink {
 	protected static int SHOT_PRICE = 500;
 	protected int shotAmount;
 	protected int syrupAmount;
+	
+	public Coffee(String name, int price){
+		super(name, price);
+	}
 
 	public int getShotAmount(){
 		return shotAmount;

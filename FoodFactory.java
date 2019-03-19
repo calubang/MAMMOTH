@@ -2,9 +2,13 @@ public class FoodFactory {
 	public static Food createFood(String name){
 		switch ( name ) {
 			case "americano":
-				return new Americano();
+				System.out.println(name);
+				return new Coffee(name, MenuHashMap.getPrice(name));
 			case "cafelatte":
-				return new CafeLatte();
+				return new Coffee(name, MenuHashMap.getPrice(name));
+				//return new CafeLatte();
+			default:
+				return new Coffee("Error", -1);
 		}	
 	}
 }

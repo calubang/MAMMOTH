@@ -1,10 +1,18 @@
-// hotIce : 0 차가운거, 1 따뜻한거
+// hotIce : 0 뜨거운거, 1 차가운거
+enum IceType{
+	HOT, ICE
+}
 abstract class Drink implements Food{
 	protected int price;
 	protected String name;
-	protected int hotIce;
+	protected IceType iceType;
 	protected int totalPrice;
 	
+	public Drink(String name, int price){
+		this.name = name;
+		this.price = price;
+	}
+
 	//totalPrice 는 하위에서 구현
 	public abstract int getTotalPrice();
 	
@@ -26,12 +34,19 @@ abstract class Drink implements Food{
 		this.name = name;
 		return true;
 	}
-	public int getHotIce(){
-		return hotIce;
+	public String getHotIce(){
+		switch (iceType){
+			case HOT:
+				return "HOT";
+			case ICE:
+				return "ICE";
+			default:
+				return "Error";		
+		}
 	}
-	public boolean setHotIce(int hotIce){
-		if ( hotIce == 0 || hotIce == 1){
-			this.hotIce = hotIce;
+	public boolean setHotIce(IceType iceType){
+		if ( iceType == IceType.HOT  || iceType == IceType.ICE ){
+			this.iceType = iceType;
 			return true;
 		}
 		return false;
