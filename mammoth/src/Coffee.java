@@ -1,17 +1,28 @@
 //shotAmount : 샷추가 개수 기본은 1
 //syrupAmount : 시럽추가 개수 기본은 1
 class Coffee extends Drink {
-	protected static int SYRUP_PRICE = 500;
-	protected static int SHOT_PRICE = 500;
+	protected int SYRUP_PRICE;
+	protected int SHOT_PRICE;
 	protected int shotAmount;
 	protected int syrupAmount;
 	
 	public Coffee(String name, int price){
-		super(name, price);
+		this(name, price, 0, 0);
 	}
+	public Coffee(String name, int price, int shotAmount, int syrupAmount) {
+		super(name, price);
+		this.shotAmount = shotAmount;
+		this.syrupAmount = syrupAmount;
+		SYRUP_PRICE = OptionHashMap.getPrice("SYRUP_PRICE");
+		SHOT_PRICE = OptionHashMap.getPrice("SYRUP_PRICE");
+	}
+	
 
 	public int getShotAmount(){
 		return shotAmount;
+	}
+	public int getShotPrice() {
+		return getShotAmount() * SHOT_PRICE;
 	}
 	public boolean setShotAmount(int shotAmount){
 		if(shotAmount > 0){
@@ -23,6 +34,10 @@ class Coffee extends Drink {
 	public int getSyrupAmount(){
 		return syrupAmount;
 	}
+	public int getSyrupPrice() {
+		return getSyrupAmount() * SYRUP_PRICE;
+	}
+	
 	public boolean setSyrupAmount(int syrupAmount){
 		if (syrupAmount > 0){
 			this.syrupAmount = syrupAmount;
@@ -38,11 +53,12 @@ class Coffee extends Drink {
 	}
 	@Override
 	public String toString(){
-		String coffeeInfo = name + "(" + price + ")";
-		if(shotAmount > 1)
-			coffeeInfo += "\n샷추가 : " + shotAmount;
-		if (syrupAmount > 1)
-			coffeeInfo += "\n시럽추가 : " + syrupAmount;
+		String coffeeInfo = name + "(" + getHotIce() + ")" + "\t"+getPrice();
+		if(shotAmount > 0)
+			coffeeInfo += "\n샷추가    : " + getShotAmount() + "\t\t+"+getShotPrice();
+		if (syrupAmount > 0)
+			coffeeInfo += "\n시럽추가 : " + getSyrupAmount()+ "\t\t+"+getSyrupPrice();
+		coffeeInfo += "\n최종가격 : \t\t" + getTotalPrice();
 		return coffeeInfo;
 	}
 

@@ -5,7 +5,7 @@ public class MenuHashMap {
 
 	private MenuHashMap(){}
 
-	public static HashMap getInstance(){
+	public static HashMap<String, Integer> getInstance(){
 		return menuPrice;
 	}
 	
@@ -14,10 +14,5 @@ public class MenuHashMap {
 	}
 	public static int getPrice(String name){
 		return menuPrice.get(name);
-	}
-
-	public static void main(String[] args) 
-	{
-		System.out.println("");
 	}
 }
