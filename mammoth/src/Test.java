@@ -16,10 +16,11 @@ class Test {
 		
 		int price = (Integer)menuPrice.get("americano");
 		System.out.println(price);
-		Food food = FoodFactory.createFood("americano");
+		
 		System.out.println("11");
+		Food food = FoodFactory.createFood("americano");
 		System.out.println(food.getName());
-		
-		
+
+		//test
 	}
 }

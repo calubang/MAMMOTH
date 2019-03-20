@@ -1,5 +1,5 @@
-import java.util.LinkedList
-public class Orders{
+import java.util.LinkedList;
+public class Order {
 	protected LinkedList<Food> list;
 	protected int totalPrice;
 
@@ -27,9 +27,5 @@ public class Orders{
 	
 	public LinkedList<Food> getAllFood(){
 		return list;
-	}
-	
-	public Food deleteFood() {
-				
 	}
 }
