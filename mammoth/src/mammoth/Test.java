@@ -14,7 +14,7 @@ class Test {
 		optionPrice.put("SYRUP_PRICE", 500);
 		optionPrice.put("SHOT_PRICE", 500);
 		
-		
+
 		//Iterator 
 		Map.Entry<String, Integer> entry = null;
 		Iterator<Map.Entry<String, Integer>> itr = menuPrice.entrySet().iterator();
@@ -30,14 +30,11 @@ class Test {
 		
 		
 		int price = (Integer)menuPrice.get("americano");
-		//System.out.println(price);
-		
-		//System.out.println("11");
+
 		Coffee coffee1 = (Coffee)FoodFactory.createFood(FoodType.COFFEE, "americano");
 		coffee1.setHotIce(IceType.HOT);
 		coffee1.setShotAmount(2);
 		coffee1.setSyrupAmount(1);
-		//System.out.println(coffee1);
 		
 		Coffee coffee2 = (Coffee)FoodFactory.createFood(FoodType.COFFEE, "cafelatte");
 		coffee2.setHotIce(IceType.ICE);
@@ -59,6 +56,7 @@ class Test {
 		
 		System.out.println(order.deleleList(2));
 		System.out.println(order);
+		
 		
 		
 		
