@@ -1,3 +1,4 @@
+package mammoth;
 //shotAmount : 샷추가 개수 기본은 1
 //syrupAmount : 시럽추가 개수 기본은 1
 class Coffee extends Drink {

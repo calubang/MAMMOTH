@@ -1,3 +1,4 @@
+package mammoth;
 // hotIce : 0 뜨거운거, 1 차가운거
 enum IceType{
 	HOT, ICE

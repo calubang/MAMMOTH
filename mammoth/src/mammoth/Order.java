@@ -1,3 +1,4 @@
+package mammoth;
 import java.util.Iterator;
 import java.util.LinkedList;
 enum PaymentType{

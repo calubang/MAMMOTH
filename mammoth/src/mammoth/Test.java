@@ -1,3 +1,4 @@
+package mammoth;
 import java.util.*;
 class Test {
 	

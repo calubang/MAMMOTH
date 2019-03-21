@@ -1,3 +1,4 @@
+package mammoth;
 import java.util.HashMap;
 public class OptionHashMap {
 	private static HashMap<String, Integer> optionPrice = new HashMap<String, Integer>();

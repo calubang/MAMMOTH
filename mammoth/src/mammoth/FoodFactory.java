@@ -1,3 +1,4 @@
+package mammoth;
 enum FoodType{
 	COFFEE, BEVERAGE, DESSERT
 }
