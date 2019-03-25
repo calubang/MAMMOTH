@@ -52,6 +52,15 @@ public class Order {
 		//주방장쪽으로 리스트를 옮긴다.
 	}
 	
+	public void payment(PaymentType paymentType) {
+		if(paymentType != PaymentType.NON) {
+			setPaymentType(paymentType);
+			//주방에서 볼수 있는 리스트에 추가할것.
+			//
+			
+		}
+	}
+	
 	@Override
 	public String toString() {
 		Iterator<Food > itr = list.iterator();
