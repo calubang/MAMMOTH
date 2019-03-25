@@ -24,6 +24,10 @@ public class Order {
 		addList(food);
 	}
 	
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	
 	//주문번호를 리턴
 	public int getOrderPrice() {
 		return orderNumber;
@@ -64,7 +68,7 @@ public class Order {
 	@Override
 	public String toString() {
 		Iterator<Food > itr = list.iterator();
-		String info = orderNumbering + "\n";
+		String info = "";
 		info += "주문번호 : " + orderNumber + "\n";
 		info += "----------주문 내역----------\n";
 		if(list.isEmpty()) {

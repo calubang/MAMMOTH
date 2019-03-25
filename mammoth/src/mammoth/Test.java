@@ -54,12 +54,11 @@ class Test {
 		
 		System.out.println("-------------------------------------------------------------------");
 		
-		System.out.println(order.deleleList(2));
-		System.out.println(order);
+		//System.out.println(order.deleleList(2));
+		//System.out.println(order);
 		
-		
-		
-		
+		PaymentList.getInstance().add(order);
+		System.out.println(PaymentList.getInstance());
 		
 	}
 }
